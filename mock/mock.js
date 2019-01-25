@@ -25,6 +25,9 @@ return client.queryCluster('standard-cluster-1')
         //         another: 'lalala'
         //     }
         // });
+        // return k8sClient.ServiceAccount.queryAll("default");
+        // return k8sClient.Namespace.query(null, "default");
+
         // return k8sClient.BerliozService.delete('default', 'kukuku');
         // return k8sClient.CustomResourceDefinition.queryAll();
         // return k8sClient.PriorityClass.queryAll();
@@ -200,7 +203,8 @@ return client.queryCluster('standard-cluster-1')
         // return client.listNamespacedPriorityClasses('default')
     })
     .then(result => {
-        var names = result.map(x => x.metadata.name);
+        var names = result;
+        // var names = result.map(x => x.metadata.name);
         logger.info('POD NAMES: ', names);
     })
     .then(result => {
