@@ -11,7 +11,7 @@ var GcpSdkClient = require("../index");
 
 var client = new GcpSdkClient(logger, 'us-central1-a', credentials);
 
-return client.queryCluster('standard-cluster-1')
+return client.queryCluster('gg')
     .then(cluster => {
         return client.connectToRemoteKubernetes(cluster);
     })
@@ -31,7 +31,7 @@ return client.queryCluster('standard-cluster-1')
         // return k8sClient.BerliozService.delete('default', 'kukuku');
         // return k8sClient.CustomResourceDefinition.queryAll();
         // return k8sClient.PriorityClass.queryAll();
-        return k8sClient.Pod.queryAll();
+        // return k8sClient.Pod.queryAll();
         // return k8sClient.Node.queryAll();
         return k8sClient.Deployment.queryAll('default');
         return k8sClient.BerliozService.queryAll('default');
@@ -203,9 +203,9 @@ return client.queryCluster('standard-cluster-1')
         // return client.listNamespacedPriorityClasses('default')
     })
     .then(result => {
-        var names = result;
-        // var names = result.map(x => x.metadata.name);
-        logger.info('POD NAMES: ', names);
+        // var names = result;
+        var names = result.map(x => x.metadata.name);
+        logger.info('NAMES: ', names);
     })
     .then(result => {
         logger.info('RESULT: ', result);
