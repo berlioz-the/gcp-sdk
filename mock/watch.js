@@ -11,13 +11,17 @@ var GcpSdkClient = require("../index");
 
 var client = new GcpSdkClient(logger, 'us-central1-a', credentials);
 
-return client.queryCluster('standard-cluster-1')
+
+var sampleLogger = logger.sublogger("Sample");
+
+return client.queryCluster('gg')
     .then(cluster => {
         return client.connectToRemoteKubernetes(cluster);
     })
     .then(k8sClient => {
-        return k8sClient.Pod.watchAll('default', (action, pod) => {
-            logger.info("%s :: %s => %s", action, pod.metadata.name, pod.status.phase)
+        return k8sClient.Pod.watchAll(null, (action, obj) => {
+            sampleLogger.info("%s :: %s => ", action, obj.metadata.name)
+            // sampleLogger.info("%s :: %s => ", action, obj.metadata.name, obj)
         });
     })
     // .then(result => {
@@ -25,8 +29,8 @@ return client.queryCluster('standard-cluster-1')
     //     logger.info('POD NAMES: ', names);
     // })
     .then(result => {
-        logger.info('END RESULT: ', result);
+        sampleLogger.info('END RESULT: ', result);
     })
     .catch(reason => {
-        logger.error(reason);
+        sampleLogger.error(reason);
     })
