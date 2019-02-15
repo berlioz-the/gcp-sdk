@@ -33,6 +33,8 @@ return client.queryCluster('gg')
         // return k8sClient.PriorityClass.queryAll();
         // return k8sClient.Pod.queryAll();
         // return k8sClient.Node.queryAll();
+        return k8sClient.StatefulSet.queryAll('default');
+        return k8sClient.Service.queryAll('gg');
         return k8sClient.Deployment.queryAll('default');
         return k8sClient.BerliozService.queryAll('default');
         return k8sClient.DaemonSet.queryAll('default');
