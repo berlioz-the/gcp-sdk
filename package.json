@@ -1,6 +1,6 @@
 {
   "name": "berlioz-gcp-sdk",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "",
   "main": "index.js",
   "directories": {
@@ -21,6 +21,8 @@
   "homepage": "https://github.com/berlioz-the/gcp-sdk#readme",
   "dependencies": {
     "@google-cloud/container": "^0.3.0",
+    "@google-cloud/pubsub": "^0.24.1",
+    "@google-cloud/storage": "^2.4.2",
     "base-64": "^0.1.0",
     "jsonwebtoken": "^8.4.0",
     "ndjson": "^1.5.0",
