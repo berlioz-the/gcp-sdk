@@ -22,13 +22,29 @@ var requestMsg = {
     ]
 };
 
-const PubSub = require('@google-cloud/pubsub');
-var publisherClient = new PubSub.v1.PublisherClient({credentials: credentials});
-logger.info('REQUEST: ', requestMsg);
+// const PubSub = require('@google-cloud/pubsub');
+// var publisherClient = new PubSub.v1.PublisherClient({credentials: credentials});
+// logger.info('REQUEST: ', requestMsg);
 
-return publisherClient.publish(requestMsg)
+return client.PubSub.getTopicPolicy('gprod_hello_us-central1_main_jobs')
+// return client.PubSub.setTopicPolicy('gprod_hello_us-central1_main_jobs',  [
+//     {
+//       "members": [
+//         "serviceAccount:gprod-gprod-hello-main-web-4@sample-proj-2-230121.iam.gserviceaccount.com"
+//       ],
+//       "role": "roles/pubsub.publisher"
+//     },
+//     {
+//         "members": [
+//           "serviceAccount:gprod-gprod-hello-main-web-4@sample-proj-2-230121.iam.gserviceaccount.com"
+//         ],
+//         "role": "roles/pubsub.subscriber"
+//     }
+//   ]
+// )
+// return publisherClient.publish(requestMsg)
 // return client.PubSub.queryAllTopics('projects/sample-proj-2-230121/topics/prod-')
-// return client.PubSub.queryTopic('prod-jobszzz')
+// return client.PubSub.queryTopic('gprod_hello_us-central1_main_jobs')
 // return client.PubSub.createTopic('prod-jobs')
 // return client.PubSub.deleteTopic('jobs')
     .then(result => {

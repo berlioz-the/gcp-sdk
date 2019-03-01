@@ -19,10 +19,35 @@ var newBucketMeta = {
     }
   }
 
+return client.Storage.getBucketPolicy('sample-proj-2-230121_gprod_hello_us-central1_main_users')
+// return client.Storage.setBucketPolicy('sample-proj-2-230121_gprod_hello_us-central1_main_users',  [
+//     {
+//       "members": [
+//         "serviceAccount:gprod-gprod-hello-main-web-4@sample-proj-2-230121.iam.gserviceaccount.com"
+//       ],
+//       "role": "roles/storage.objectAdmin"
+//     },
+//     {
+//       "role": "roles/storage.legacyBucketOwner",
+//       "members": [
+//         "projectEditor:sample-proj-2-230121",
+//         "projectOwner:sample-proj-2-230121"
+//       ]
+//     },
+//     {
+//       "role": "roles/storage.legacyBucketReader",
+//       "members": [
+//         "projectViewer:sample-proj-2-230121"
+//       ]
+//     }
+
+//   ]
+// )
+
 // return client.Storage.queryAllBuckets()
 // return client.Storage.queryBucket('dsample-proj-2-230121-gprod-aaa-bbb-ccc-ddd-eee-11')
 // return client.Storage.createBucket('sample-proj-2-230121_localhomepc_hello_us-central1_main_users', newBucketMeta)
-return client.Storage.deleteBucket('sample-proj-2-230121_localhomepc_hello_us-central1_main_users')
+// return client.Storage.deleteBucket('sample-proj-2-230121_localhomepc_hello_us-central1_main_users')
     .then(result => {
         // result = result.map(x => x.name);
         // result = result.map(x => x.metadata);
