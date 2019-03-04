@@ -22,11 +22,13 @@ var requestMsg = {
     ]
 };
 
-// const PubSub = require('@google-cloud/pubsub');
-// var publisherClient = new PubSub.v1.PublisherClient({credentials: credentials});
-// logger.info('REQUEST: ', requestMsg);
 
-return client.PubSub.getTopicPolicy('gprod_hello_us-central1_main_jobs')
+return client.PubSub.queryAllSubscriptions('projects/sample-proj-2-230121/subscriptions/gprod_img_us-')//'gprod_hello_us-central1_main_jobs')
+// return client.PubSub.querySubscription('zzgprod_img_us-central1_main_jobs_hello_main_web')
+// return client.PubSub.createSubscription('lalala2', 'projects/sample-proj-2-230121/topics/gprod_img_us-central1_main_jobs')
+// return client.PubSub.deleteSubscription('lalala')
+
+// return client.PubSub.getTopicPolicy('gprod_hello_us-central1_main_jobs')
 // return client.PubSub.setTopicPolicy('gprod_hello_us-central1_main_jobs',  [
 //     {
 //       "members": [
@@ -42,6 +44,10 @@ return client.PubSub.getTopicPolicy('gprod_hello_us-central1_main_jobs')
 //     }
 //   ]
 // )
+
+// const PubSub = require('@google-cloud/pubsub');
+// var publisherClient = new PubSub.v1.PublisherClient({credentials: credentials});
+// logger.info('REQUEST: ', requestMsg);
 // return publisherClient.publish(requestMsg)
 // return client.PubSub.queryAllTopics('projects/sample-proj-2-230121/topics/prod-')
 // return client.PubSub.queryTopic('gprod_hello_us-central1_main_jobs')
