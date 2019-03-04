@@ -23,7 +23,8 @@ var requestMsg = {
 };
 
 
-return client.PubSub.queryAllSubscriptions('projects/sample-proj-2-230121/subscriptions/gprod_img_us-')//'gprod_hello_us-central1_main_jobs')
+return client.PubSub.getSubscriptionPolicy('projects/sample-proj-2-230121/subscriptions/gprod_img_us-central1_main_proc_img-main-jobs')
+// return client.PubSub.queryAllSubscriptions('projects/sample-proj-2-230121/subscriptions/gprod_img_us-')//'gprod_hello_us-central1_main_jobs')
 // return client.PubSub.querySubscription('zzgprod_img_us-central1_main_jobs_hello_main_web')
 // return client.PubSub.createSubscription('lalala2', 'projects/sample-proj-2-230121/topics/gprod_img_us-central1_main_jobs')
 // return client.PubSub.deleteSubscription('lalala')
