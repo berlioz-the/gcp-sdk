@@ -11,12 +11,12 @@ var GcpSdkClient = require("../index");
 
 var client = new GcpSdkClient(logger, 'us-central1-a', credentials);
 
-// return client.Function.queryAllFunctions('sample-proj-2-230121', 'us-central1', 'projects/sample-proj-2-230121/locations/us-central1/functions/hello-')
-return client.Function.queryFunction('projects/sample-proj-2-230121/locations/us-central1/functions/hello-world')
+return client.Function.queryAllFunctions('sample-proj-2-230121', 'gprod-')
+// return client.Function.queryFunction('projects/sample-proj-2-230121/locations/us-central1/functions/hello-world')
 // return client.Function.deleteFunction('projects/sample-proj-2-230121/locations/us-central1/functions/function-hello')
-// return client.Function.createFunction('sample-proj-2-230121', 'us-central1', 'hello-world', {
+// return client.Function.createFunction('sample-proj-2-230121', 'hello-zzz', {
 //     "httpsTrigger": {
-//       "url": "https://us-central1-sample-proj-2-230121.cloudfunctions.net/hello-world"
+//       "url": "https://us-central1-sample-proj-2-230121.cloudfunctions.net/hello-zzz"
 //     },
 //     "status": "ACTIVE",
 //     "entryPoint": "handler",
