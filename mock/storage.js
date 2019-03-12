@@ -19,7 +19,10 @@ var newBucketMeta = {
     }
   }
 
-return client.Storage.getBucketPolicy('sample-proj-2-230121_gprod_hello_us-central1_main_users')
+// return client.Storage.uploadLocalFile('sample-proj-2-230121-imagestore-func', '/zzz/bbb/ddd.jpg', 'd:\\berlioz.png', {
+// })
+return client.Storage.fileExists('sample-proj-2-230121-imagestore-func', '/zzz/bbb/ddd.jpg')
+// return client.Storage.getBucketPolicy('sample-proj-2-230121_gprod_hello_us-central1_main_users')
 // return client.Storage.setBucketPolicy('sample-proj-2-230121_gprod_hello_us-central1_main_users',  [
 //     {
 //       "members": [
