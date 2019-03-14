@@ -11,10 +11,10 @@ var GcpSdkClient = require("../index");
 
 var client = new GcpSdkClient(logger, 'us-central1-a', credentials);
 
-// return client.Function.queryAllFunctions('sample-proj-2-230121', 'gprod-')
+// return client.Function.queryAllFunctions('gprod-')
 // return client.Function.queryFunction('projects/sample-proj-2-230121/locations/us-central1/functions/gprod-func-us-central1-main-hello')
 return client.Function.deleteFunction('projects/sample-proj-2-230121/locations/us-central1/functions/hello-aaa')
-// return client.Function.createFunction('sample-proj-2-230121', 'hello-aaa', {
+// return client.Function.createFunction('hello-aaa', {
 //     "httpsTrigger": {
 //       "url": "https://us-central1-sample-proj-2-230121.cloudfunctions.net/hello-aaa"
 //     },
