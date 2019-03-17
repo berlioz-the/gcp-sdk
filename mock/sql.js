@@ -11,11 +11,11 @@ var GcpSdkClient = require("../index");
 
 var client = new GcpSdkClient(logger, 'us-central1-a', credentials);
 
-return client.Sql.queryAllInstances()
+return client.Sql.queryAllInstances('gprod-func-uscentral1-')
 // return client.Sql.queryInstance('my-primary-db-2-ldfajsldkfjlke')
 // return client.Sql.queryRunningInstanceOperations('my-primary-db-2-ldfajsldkfjlke')
 // return client.Sql.queryInstanceOperations('my-primary-db-2-ldfajsldkfjlke')
-// return client.Sql.createInstance('my-primary-db-2-klbjsldkjf', {
+// return client.Sql.createInstance('my-primary-db-2-asdfasdfeerw', {
 //     settings: {
 //         tier: 'db-n1-standard-1'
 //     }
