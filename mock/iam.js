@@ -11,7 +11,9 @@ var GcpSdkClient = require("../index");
 
 var client = new GcpSdkClient(logger, 'us-central1-a', credentials);
 
-return client.Iam.queryAllServiceAccounts('gprod-berlioz-')//)
+return client.Iam.getProjectIamPolicy()
+// return client.Iam.queryProjectPolicy()
+// return client.Iam.queryAllServiceAccounts('gprod-berlioz-')//)
 // return client.Iam.queryLiveServiceAccounts('gprod-gprod-hello-')
 // return client.Iam.queryServiceAccount('projects/sample-proj-2-230121/serviceAccounts/gprod-berlioz-main-ctlr-1@sample-proj-2-230121.iam.gserviceaccount.com')
 // return client.Iam.createServiceAccount('gprod-gprod-hello-main-web')
