@@ -11,7 +11,7 @@ var GcpSdkClient = require("../index");
 
 var client = new GcpSdkClient(logger, 'us-central1-a', credentials);
 
-return client.Sql.queryAllInstances('gprod-func-uscentral1-')
+// return client.Sql.queryAllInstances('gprod-func-uscentral1-')
 // return client.Sql.queryInstance('my-primary-db-2-ldfajsldkfjlke')
 // return client.Sql.queryRunningInstanceOperations('my-primary-db-2-ldfajsldkfjlke')
 // return client.Sql.queryInstanceOperations('my-primary-db-2-ldfajsldkfjlke')
@@ -27,6 +27,7 @@ return client.Sql.queryAllInstances('gprod-func-uscentral1-')
 //     }
 // })
 // return client.Sql.deleteInstance('my-primary-db-2-ldfajsldkfjlke')
+return client.Sql.importSql('gprod-func-uscentral1-main-inventory-ptgzaaxtqa', 'sys', 'gs://sample-proj-2-230121-imagestore-func/func/database-sql-zzz/init.sql')
     .then(result => {
         // result = result.map(x => x.name);
         // result = result.map(x => x.metadata);
