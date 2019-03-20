@@ -19,9 +19,12 @@ var newBucketMeta = {
     }
   }
 
+//   return client.Storage.copyFile('sample-proj-2-230121-imagestore-func', 'func/database-func-main-inventory/sha256:3e64b5cfa7c1640d92a67d937c6a2ef79a7ff1e1133b66bea7b1e254fc294fef/init.sql', 'sample-proj-2-230121_gprod_func_us-central1_init_inventory', '/init.z')
+return client.Storage.copyDirectory('sample-proj-2-230121-imagestore-func', 'func/database-func-main-inventory/sha256:3e64b5cfa7c1640d92a67d937c6a2ef79a7ff1e1133b66bea7b1e254fc294fef', 'sample-proj-2-230121_gprod_func_us-central1_init_inventory', '/')
+
 // return client.Storage.uploadLocalFile('sample-proj-2-230121-imagestore-func', '/zzz/bbb/ddd.jpg', 'd:\\berlioz.png', {
 // })
-return client.Storage.fileExists('sample-proj-2-230121-imagestore-func', '/zzz/bbb/ddd.jpg')
+// return client.Storage.fileExists('sample-proj-2-230121-imagestore-func', '/zzz/bbb/ddd.jpg')
 // return client.Storage.getBucketPolicy('sample-proj-2-230121_gprod_hello_us-central1_main_users')
 // return client.Storage.setBucketPolicy('sample-proj-2-230121_gprod_hello_us-central1_main_users',  [
 //     {
