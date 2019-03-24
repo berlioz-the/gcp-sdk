@@ -48,8 +48,8 @@ var newBucketMeta = {
 
 //   ]
 // )
-return client.Storage.emptyBucket('sample-proj-2-230121_gprod_func_us-central1_init_inventory')
-// return client.Storage.queryAllBuckets()
+// return client.Storage.emptyBucket('sample-proj-2-230121_gprod_func_us-central1_init_inventory')
+return client.Storage.queryAllBuckets()
 // return client.Storage.queryBucket('dsample-proj-2-230121-gprod-aaa-bbb-ccc-ddd-eee-11')
 // return client.Storage.createBucket('sample-proj-2-230121_localhomepc_hello_us-central1_main_users', newBucketMeta)
 // return client.Storage.deleteBucket('sample-proj-2-230121_localhomepc_hello_us-central1_main_users')
