@@ -22,7 +22,38 @@ function connectToK8s()
 
 return connectToK8s() 
     .then(k8s => {
-        return k8s.PodAutoscaler.queryAll('gprod');
+        // return k8s.HorizontalPodAutoscaler.queryAll('gprod');
+        // return k8s.HorizontalPodAutoscaler.create('gprod', 
+        //      {
+        //     "metadata": {
+        //         "name": "gprod-addr-main-web",
+        //         "labels": {
+        //             "name": "gprod-addr-main-web",
+        //             "berlioz_managed": "true",
+        //             "cluster": "addr",
+        //             "sector": "main",
+        //             "service": "web",
+        //             "deployment": "gprod"
+        //         }
+        //     },
+        //     "spec": {
+        //         minReplicas: 1,
+        //         maxReplicas: 10,
+        //         "metrics": [
+        //             {
+        //                 "type": "Resource",
+        //                 "resource": {
+        //                     "name": "cpu",
+        //                     "targetAverageUtilization": 33
+        //                 }
+        //             }
+        //         ],
+        //         "scaleTargetRef": {
+        //             "kind": "Deployment",
+        //             "name": "gprod-addr-main-web"
+        //         }
+        //     }
+        // });
     })
     .then(result => {
         logger.info('RESULT: ', result);
