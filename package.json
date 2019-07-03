@@ -1,11 +1,12 @@
 {
   "name": "berlioz-gcp-sdk",
-  "version": "1.0.51",
+  "version": "1.0.52",
   "description": "",
   "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "files": [
+    "index.js",
+    "lib"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
