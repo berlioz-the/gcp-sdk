@@ -11,9 +11,9 @@ var GcpSdkClient = require("../index");
 
 var client = new GcpSdkClient(logger, 'us-central1-a', credentials);
 
-// return client.Function.queryAllFunctions('gprod-')
+return client.Function.queryAllFunctions()
 // return client.Function.queryFunction('projects/sample-proj-2-230121/locations/us-central1/functions/gprod-func-us-central1-main-hello')
-return client.Function.deleteFunction('projects/sample-proj-2-230121/locations/us-central1/functions/hello-aaa')
+// return client.Function.deleteFunction('projects/sample-proj-2-230121/locations/us-central1/functions/hello-aaa')
 // return client.Function.createFunction('hello-aaa', {
 //     "httpsTrigger": {
 //       "url": "https://us-central1-sample-proj-2-230121.cloudfunctions.net/hello-aaa"
@@ -46,7 +46,7 @@ return client.Function.deleteFunction('projects/sample-proj-2-230121/locations/u
 //     "sourceArchiveUrl": "gs://sample-proj-2-230121-imagestore-func/func/lambda-func-main-hello/sha256:c432de6022e725e767e6ac80263d79f0f428df23a62afa100162081e4b0df8f8",
 //     "runtime": "nodejs6"
 // })
-.then(result => client.Function.waitForOperation(result))
+// .then(result => client.Function.waitForOperation(result))
 // .then(result => {
 //     logger.info('INITIAL UPDATE RESULT: ', result);
 
