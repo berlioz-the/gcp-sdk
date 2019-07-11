@@ -29,7 +29,10 @@ function waitOperation(name)
 // return client.CloudResourceManager.queryProject()
 // return client.ServiceUsage.query('zync.googleapis.com')
 // return client.ServiceUsage.enable('zync.googleapis.com')
-return client.ServiceUsage.disable('zync.googleapis.com')
+// return client.ServiceUsage.disable('zync.googleapis.com')
+return client.ServiceUsage.disable('container.googleapis.com')
+// return client.ServiceUsage.disable('containerregistry.googleapis.com')
+// return client.ServiceUsage.disable('cloudresourcemanager.googleapis.com')
 // return client.ServiceUsage.enable('cloudresourcemanager.googleapis.com')
 .then(result => {
     console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
