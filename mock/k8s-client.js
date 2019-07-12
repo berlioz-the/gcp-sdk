@@ -35,64 +35,12 @@ function createCluster(name)
         })
 }
 
-function applyClusterAdminBinding(k8s)
-{
-    var body = {
-        metadata: {
-            name: 'berlioz:robot-cluster-admin-binding'
-        },
-        roleRef: {
-          apiGroup: 'rbac.authorization.k8s.io',
-          kind: 'ClusterRole',
-          name: 'cluster-admin',
-        },
-        subjects: [{
-            apiGroup: 'rbac.authorization.k8s.io',
-            kind: 'User',
-            name: 'berlioz-robot@berlioz-demo-fire.iam.gserviceaccount.com'
-        }]
-    };
-    return k8s.ClusterRoleBinding.create(null, body)
-        .then(result => {
-            logger.info("CREATED: ", result);
-        });
-}
-
-function applyBerliozControllerRole(k8s)
-{
-    var body = {
-        metadata: {
-            name: 'berlioz:berlioz:main-ctlr'
-        },
-        rules: [
-            {
-                apiGroups: [""],
-                resources: ["nodes"],
-                verbs: ["get", "list", "watch"]
-            },
-            {
-                apiGroups: [""],
-                resources: ["pods"],
-                verbs: ["get", "list", "watch"]
-            },
-            {
-                apiGroups: ["berlioz.cloud"],
-                resources: ["services"],
-                verbs: ["get", "list", "watch"]
-            }
-        ]
-    };
-    return k8s.ClusterRole.create(null, body)
-        .then(result => {
-            logger.info("CREATED: ", result);
-        });
-}
-
-
-// return client.Container.queryCluster('test-uswest1c')
-return connectToK8s('gprod-uswest1c')
-// return createCluster('nother-zibil')
+return client.Container.queryCluster('another-zibil')
+// return connectToK8s('gprod-uswest1c')
+// return createCluster('another-zibil')
     .then(k8s => {
+        logger.info('**********MY CLUSTER:', k8s);
+
         // return k8s.Namespace.delete(null, "zzz")
     //     return Promise.resolve()
     //         .then(() => applyClusterAdminBinding(k8s))
