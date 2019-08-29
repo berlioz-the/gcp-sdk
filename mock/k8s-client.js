@@ -35,13 +35,12 @@ function createCluster(name)
         })
 }
 
-return client.Container.queryCluster('another-zibil')
-// return connectToK8s('gprod-uswest1c')
-// return createCluster('another-zibil')
+// return client.Container.queryCluster('gprod-uswest1c')
+return connectToK8s('gprod-uswest1c')
+// return createCluster('gprod-uswest1c')
     .then(k8s => {
-        logger.info('**********MY CLUSTER:', k8s);
-
-        // return k8s.Namespace.delete(null, "zzz")
+        // logger.info('**********MY CLUSTER:', k8s);
+        return k8s.Namespace.queryAll()
     //     return Promise.resolve()
     //         .then(() => applyClusterAdminBinding(k8s))
     //         .then(() => applyBerliozControllerRole(k8s))
